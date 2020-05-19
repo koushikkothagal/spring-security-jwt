@@ -10,11 +10,12 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
+import java.util.UUID;
 
 @Service
 public class JwtUtil {
 
-    private String SECRET_KEY = "secret";
+    private String SECRET_KEY = UUID.randomUUID().toString();
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
